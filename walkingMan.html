@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Walking Man</title>
+        <meta charset="UTF-8"> 
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+        <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+        
+        <!-- import events.js script -->
+       
+        <script src="listener.js"></script>
+    </head>
+    <body>
+        <a-scene btn-click >
+            <a-assets>
+                <a-asset id="cesium-man" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/29355d23/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"></a-asset>
+            </a-assets>
+
+            <a-marker emitevents="true" cursor="rayOrigin: mouse" preset="hiro">
+                <a-entity
+                    id="btn"
+                    geometry="primitive: cylinder; radius: .5; height: .5;"
+                    material="color: red"
+                    rotation="90 0 0"
+                    position="0 1 -2">
+                </a-entity>
+                <a-text
+                    id="btnLabel"
+                    value="PUSH"
+                    color="#FFF"
+                    rotation="0 0 0"
+                    position="-.43 1 -1.75"
+                    height="20"
+                    width="7" >
+                </a-text>
+                <a-entity
+                    id="turnBtn"
+                    geometry="primitive: cylinder; radius: .5; height: .5;"
+                    material="color: blue"
+                    rotation="90 0 0"
+                    position="1.5 1 -2"
+                    visible="false">
+                </a-entity>
+                <a-text
+                    id="turnLabel"
+                    value="TURN"
+                    color="#FFF"
+                    rotation="0 0 0"
+                    position="1.1 1 -1.75"
+                    height="20"
+                    width="7"
+                    visible="false">
+                </a-text>
+                <a-entity
+                    id="moveBtn"
+                    geometry="primitive: cylinder; radius: .5; height: .5;"
+                    material="color: blue"
+                    rotation="90 0 0"
+                    position="-1.5 1 -2"
+                    visible="false">
+                </a-entity>
+                <a-text
+                    id="moveLabel"
+                    value="MOVE"
+                    color="#FFF"
+                    rotation="0 0 0"
+                    position="-2 1 -1.75"
+                    height="20"
+                    width="7"
+                    visible="false">
+                </a-text>
+                <a-entity
+                    id="walker"
+                    gltf-model="#cesium-man"
+                    position="0 -.5 -1"
+                    scale="0.5 0.5 0.5"
+                    visible="false">
+                </a-entity>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+  </html>
