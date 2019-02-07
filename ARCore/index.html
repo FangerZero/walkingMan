@@ -21,11 +21,11 @@
 
   <body>
     <a-scene ar>
-      <a-camera ar-raycaster raycaster cursor="fuse:false"></a-camera>
       <a-marker preset="hiro">
-      <a-assets>
-        <a-asset id="cesium-man" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/29355d23/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"></a-asset>
-      </a-assets>
+        <a-assets>
+          <a-asset id="cesium-man" src="https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/29355d23/2.0/CesiumMan/glTF-Binary/CesiumMan.glb"></a-asset>
+        </a-assets>
+        <a-camera ar-raycaster raycaster cursor="fuse:false"></a-camera>
       <a-entity id="walker">
         <a-entity gltf-model="#cesium-man" scale="0.15 0.15 0.15" rotation="0 -90 0" animation-mixer
                   shadow="cast: true">
